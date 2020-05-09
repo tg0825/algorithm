@@ -5,16 +5,15 @@ class main {
     constructor() {
         glob.sync('./algorithm/*.js').forEach(function (file) {
             const name = path.basename(file).split('.')[0];
-            const current = require(path.resolve(file));
-
-            console.time();
+            console.time('duration');
             console.log(`
 ==============================================================================
 `);
+            const current = require(path.resolve(file));
             console.log(`Name: ${name}`);
             console.log(`Description: ${current.desc}`);
-            console.log(current.result);
-            console.timeEnd();
+            console.table(current.result);
+            console.timeEnd('duration');
         });
     }
 }
