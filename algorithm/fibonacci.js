@@ -9,22 +9,17 @@ class Func {
     constructor() {
         return {
             desc: this.desc,
-            result: this.BinarySearchIteration([10, 11, 15, 16, 18, 20, 21, 33, 45], 9, 33),
+            result: this.Fibonacci(10),
         }
     }
 
-    BinarySearchIteration(A = [], n, x) {
-        let Left = 0;
-        let Right = n - 1;
-
-        while(Left <= Right) {
-            const Mid = Math.floor((Left + Right) / 2);
-            if (x === A[Mid]) return Mid;
-            else if (x < A[Mid]) Right = Mid - 1; // 좌측 탐색
-            else Left = Mid + 1; // 우측 탐색
+    Fibonacci(n) {
+        const f = [];
+        f.push(0,1);
+        for(let i = 2; i <= n; i++){
+            f[i] = f[i - 1] + f[i - 2];
         }
-
-        return -1;
+        return f[n];
     }
 }
 
