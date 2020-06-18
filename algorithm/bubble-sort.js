@@ -9,7 +9,7 @@ class Func {
     constructor() {
         return {
             desc: this.desc,
-            result: this.algorithm([10, 11, 15, 16, 18, 20, 21, 33, 45]),
+            result: this.algorithm([20,10,30,11,1,5,33]),
         }
     }
 
